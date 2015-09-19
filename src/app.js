@@ -2,10 +2,13 @@
 var express = require('express'),posts=require('./mock/posts.json');
 var app = express();
 
-debugger;
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/templates');
+
+
 
 app.get('/',function(req,res){
-	res.send('<h1>Hi Jonny H Bomb Man</h1>');
+	res.render('index')
 });
 
 app.get('/blog/:title?',function(req, res) {
